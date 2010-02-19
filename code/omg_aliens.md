@@ -7,6 +7,11 @@
 <embed style='display:block' src='http://media.mtvnservices.com/mgid:cms:item:comedycentral.com:162725' width='1080' height='903' type='application/x-shockwave-flash' wmode='window' allowFullscreen='true' flashvars='autoPlay=false' allowscriptaccess='always' allownetworking='all' bgcolor='#000000'></embed>
 
 !SLIDE
+# Step one: Rush mix tape #
+## copy rush_remix.ogg into omg_aliens/data/music
+## sound_manager.play_music :rush_remix in stage#setup ##
+
+!SLIDE
 # Create the player #
 
 	@@@ bash
@@ -159,7 +164,7 @@
 !SLIDE
 # what to do when things collide? #
 
-## setup in our stage says what to do ##
+## use on_collision_of to define interactions ##
 ## remove_self on alien and laser ##
 ## play the :death sound ##
 
@@ -174,7 +179,7 @@
 !SLIDE bullets small
 # Explore #
 
-* add more sounds
+* add more sounds, animations
 * aliens shoot back (add_timer)
 * add scores, backgrounds
 * add multiple waves, lives
