@@ -71,7 +71,7 @@
 
 	@@@ bash
 	$ ./script/generate actor FrickinLaser
-	$ ./script/generate actor_view FrickinLaserView 
+	$ ./script/generate view FrickinLaserView 
 
 !SLIDE
 # FrickinLaser needs to update its position #
