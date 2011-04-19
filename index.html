@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Presentation</title>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+    <link rel="stylesheet" href="file/pew.css" type="text/css"/>
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+    setupPreso(false, './');
+  });
+  </script>
+</head>
+
+<body>
+
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">&larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">z</td><td>toggle help (this)</td></tr>
+  </table>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="intro/slide">
+<h1>Pew Pew: Writing Games with Ruby</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="who/slide/1">
+<h1>Who am I?</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="who/slide/2">
+<h1>Shawn Anderson</h1>
+
+<h1>Hobbyist Game Dev</h1>
+
+<h2>github.com/shawn42</h2>
+
+<h2>shawn42@gmail.com</h2></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="who/slide/3">
+<h1>Software Developer for Atomic Object</h1>
+
+<h2>http://atomicobject.com</h2>
+
+<p><img src="./file/who/ao_logo.png" width="330" height="330" alt="atomicobject.com"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="who/slide/4">
+<h1>Why me?</h1>
+
+<ul>
+<li>love 2D games</li>
+<li>hobbyist game dev for years</li>
+<li>working with ruby for many years</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="what/slide/1">
+<h1>What are games?</h1>
+
+<h1>fun interactions w/ sounds and graphics</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="what/slide/2">
+<h1>They aren't easy</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="what/slide/3">
+<h1>Game Loop</h1>
+
+<pre class="sh_ruby"><code>while game_running?
+  # get user input
+  # run AI
+  # move everything
+  # resolve collisions
+  # draw graphics
+  # play sounds
+  # manage framerate
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="what/slide/4">
+<h1>Messy and hard to test</h1>
+
+<ul>
+<li>Update methods with thousands of lines of code</li>
+<li>Draw methods with thousands of lines of code</li>
+<li>Crazy input handling</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="what/slide/5">
+<h1>A better way</h1></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="what/slide/6">
+<h1>SDL + Rubygame + Gamebox</h1>
+
+<p><img src="./file/what/gamebox_logo.png" width="115" height="131" alt="gamebox"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="what/slide/7">
+<h1>SDL</h1>
+
+<h1>push those low-level bits</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="what/slide/8">
+<h1>Rubygame</h1>
+
+<h1>lets ruby talk to SDL</h1>
+
+<h2>"John Croisant" <a href="mailto:jacius@gmail.com">jacius@gmail.com</a></h2>
+
+<h2>rubygame.org</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="what/slide/9">
+<h1>Gamebox</h1>
+
+<h1>lets your brain talk to ruby</h1>
+
+<h2>http://github.com/shawn42/gamebox</h2></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="what/slide/10">
+<h1>Gamebox Goals</h1>
+
+<ul>
+<li>New game up and running quickly</li>
+<li>Allow for clear DSL</li>
+<li>DRY: prebuilt objects and behaviors</li>
+<li>Helpful, not in the way</li>
+<li>Testable</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="what/slide/11">
+<h1>Gamebox Concepts</h1>
+
+<ul>
+<li>Lights, Camera, Action!</li>
+<li>Every object in a game is an Actor</li>
+<li>Actors have Behaviors</li>
+<li>Actors exist on a Stage</li>
+<li>Actors do NOT draw, ActorViews do</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="what/slide/12">
+<p><img src="./file/what/gamebox_actors.png" width="578" height="587" alt="gamebox"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="what/slide/13">
+<p><img src="./file/what/gamebox_behaviors.png" width="578" height="587" alt="gamebox"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="what/slide/14">
+<p><img src="./file/what/gamebox_stage.png" width="578" height="587" alt="gamebox"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/an_intro/1">
+<h1>Create a Gamebox game</h1>
+
+<pre class="sh_bash"><code>    $ gamebox omg_aliens
+    $ cd omg_aliens
+    $ rake</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/an_intro/2">
+<h1>Setting the Stage</h1>
+
+<p> src/demo_stage.rb</p>
+
+<pre class="sh_ruby"><code>class DemoStage &lt; Stage
+  def setup
+    super
+    @my_actor = create_actor :my_actor
+    # ...</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/an_intro/3">
+<h1>Setting the Stage</h1>
+
+<p> src/demo_stage.rb</p>
+
+<pre class="sh_ruby"><code>target.fill [25,25,25,255]
+for star in @stars
+  target.draw_circle_s([star.x,star.y],1,[255,255,255,255])
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/an_intro/4">
+<h1>Actors</h1>
+
+<p>src/my_actor.rb</p>
+
+<pre class="sh_ruby"><code>class MyActor &lt; Actor
+end</code></pre>
+
+<h2>Actor is just a location by default</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/an_intro/5">
+<h1>ActorViews</h1>
+
+<p>src/my_actor.rb</p>
+
+<pre class="sh_ruby"><code>class MyActorView &lt; ActorView
+  def draw(target, x_off, y_off)
+    target.draw_box [actor.x,actor.y], [20,20], [240,45,45,255]
+    # ...</code></pre>
+
+<h2>ActorView doesn't exist by default</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/an_intro/6">
+<h1>Behaviors</h1>
+
+<p>audible.rb (gamebox src)</p>
+
+<pre class="sh_ruby"><code>require 'behavior'
+class Audible &lt; Behavior
+
+  def setup
+    @sound_manager = @actor.stage.sound_manager
+    # ...</code></pre>
+
+<h2>modifies an actor; mostly adds methods</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/1">
+<h1>Enough talk! Let's make something!</h1>
+
+<h2>What should we build?</h2></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="code/omg_aliens/2">
+<p><embed style="display:block" src="http://media.mtvnservices.com/mgid:cms:item:comedycentral.com:162725" width="1080" height="903" type="application/x-shockwave-flash" wmode="window" allowFullscreen="true" flashvars="autoPlay=false" allowscriptaccess="always" allownetworking="all" bgcolor="#000000"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/3">
+<h1>Step one: Rush mix tape</h1>
+
+<h2>copy rush<em>remix.ogg into omg</em>aliens/data/music</h2>
+
+<h2>sound<em>manager.play</em>music :rush_remix in stage#setup</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/4">
+<h1>Create the player</h1>
+
+<pre class="sh_bash"><code>$ ./script/generate actor Player</code></pre>
+
+<h1>creates the actor and spec</h1></div>
+</div><div class="slide" data-transition="none"><div class="content incremental" ref="code/omg_aliens/5">
+<h1>Player to the Stage</h1>
+
+<h2>change demo<em>stage.rb to create :player instead of :my</em>actor</h2>
+
+<h2>have Player spawn at 200, 550</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/6">
+<h1>answer</h1>
+
+<pre class="sh_ruby"><code>@player = spawn :player, :x =&gt; 200, :y =&gt; 550</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/7">
+<h1>Uncloak the Player</h1>
+
+<h2>create an ActorView, nah</h2>
+
+<h2>use canned :graphical behavior from Gamebox</h2>
+
+<h2>copy player.png to data/graphics</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/8">
+<h1>answer</h1>
+
+<pre class="sh_ruby"><code>has_behavior :graphical</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/9">
+<h1>Undock the ship</h1>
+
+<h2>use input<em>manager.while</em>key_pressed to monitor a key down</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/10">
+<pre class="sh_ruby"><code>attr_accessor :move_left, :move_right
+def setup
+  i.while_key_pressed :left, self, :move_left
+  i.while_key_pressed :right, self, :move_right</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/11">
+<h2>now to use those variables</h2>
+
+<h2>add the :updatable behavior</h2>
+
+<h2>define update(time) method that modifies position</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/12">
+<pre class="sh_ruby"><code>has_behaviors :graphical, :updatable
+def update(time_delta)
+  velocity = 0.12 * time_delta 
+  @x += velocity if @move_right
+  @x -= velocity if @move_left
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/13">
+<h1>Player needs to shoot</h1>
+
+<pre class="sh_bash"><code>$ ./script/generate actor FrickinLaser
+$ ./script/generate view FrickinLaserView </code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/14">
+<h1>FrickinLaser needs to update its position</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/15">
+<pre class="sh_ruby"><code>has_behavior :updatable
+
+def update(time_delta)
+  velocity = 4*0.1*time_delta
+  @y -= velocity
+
+  remove_self if @y &lt; 30
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/16">
+<h1>FrickinLaserView needs to draw a box</h1>
+
+<pre class="sh_ruby"><code>def draw(target, x_offset, y_offset)</code></pre>
+
+<ul>
+<li>target is a Rubygame screen</li>
+<li>x<em>offset, y</em>offset viewport offsets (ignore for now)</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/17">
+<h1>Draw it</h1>
+
+<pre class="sh_ruby"><code>target.draw_box_s([x,y], [x2,y2], color_array)</code></pre>
+
+<h2>use the actor's x and y</h2>
+
+<h2>color is RGBA array</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/18">
+<h1>Get a FrickinLaser on the Stage</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/19">
+<h1>Back to shooting ..</h1>
+
+<h2>Player#setup should use input_manager#reg to shoot on KeyPressed, :space</h2>
+
+<h2>Player#shoot should spawn :frickin_laser at player's location</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/20">
+<h1>Get the key press</h1>
+
+<pre class="sh_ruby"><code>input_manager.reg KeyPressed, :space do
+  shoot
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/21">
+<h1>Shoot the FrickinLaser</h1>
+
+<pre class="sh_ruby"><code>def shoot
+  laser = spawn :frickin_laser, 
+    :x =&gt; @x + (image.width/2), :y =&gt; @y
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/22">
+<h1>What kind of silent laser is that?</h1>
+
+<h2>copy shoot.wav into data/sounds</h2>
+
+<h2>add :audible behavior to Player</h2>
+
+<h2>play_sound takes the name of the file as a sym ##</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/23">
+<pre class="sh_ruby"><code>has_behaviors :audible, :graph...
+play_sound :shoot</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/24">
+<h1>Create Alien actor</h1>
+
+<h2>Now let's shoot him!</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/25">
+<h1>Gamebox Collisions</h1>
+
+<h2>circles only, for now</h2>
+
+<h2>:collidable behavior (takes args)</h2>
+
+<pre class="sh_ruby"><code>:collidable =&gt; {:shape =&gt; :circle, 
+    :radius =&gt; 20}</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="code/omg_aliens/26">
+<h1>Who should collide?</h1>
+
+<ul>
+<li>Player</li>
+<li>FrickinLaser</li>
+<li>Alien</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/27">
+<h1>Add those behaviors</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/28">
+<h1>what to do when things collide?</h1>
+
+<h2>use on<em>collision</em>of to define interactions</h2>
+
+<h2>remove_self on alien and laser</h2>
+
+<h2>play the :death sound</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="code/omg_aliens/29">
+<pre class="sh_ruby"><code>on_collision_of :alien, :frickin_laser do |alien,laser|
+  alien.remove_self
+  laser.remove_self
+  sound_manager.play_sound :death
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content bullets small" ref="code/omg_aliens/30">
+<h1>Explore</h1>
+
+<ul>
+<li>add more sounds, animations</li>
+<li>aliens shoot back (add_timer)</li>
+<li>add scores, backgrounds</li>
+<li>add multiple waves, lives</li>
+<li>add ufos</li>
+<li>anything!</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="info/slide">
+<h1>Resources</h1>
+
+<h2>rubygame.org</h2>
+
+<h2>code.google.com/p/sfxr</h2>
+
+<h2>http://github.com/shawn42/gamebox/blob/master/docs/getting_started.rdoc</h2>
+
+<h2>shawn42@gmail.com</h2></div>
+</div>
+</div>
+
+</body>
+</html>
